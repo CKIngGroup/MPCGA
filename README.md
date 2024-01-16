@@ -31,6 +31,12 @@ $`
 \{\hat{J}_{\hat{k}_m}; 1\leq m\leq M \text{ and }m \text{ satisfies (1)}\}
 `$
 
-
+# A simple schematic diagram
 
 ![image](https://github.com/CKIngGroup/MPCGA/assets/117146718/a37465b6-f750-4d0d-9ae3-6757a5699e0c)
+
+# Algorithm
+
+![image](https://github.com/CKIngGroup/MPCGA/assets/117146718/c590b9a7-5f55-41ca-be3a-f75629ef3902)
+
+

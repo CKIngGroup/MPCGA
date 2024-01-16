@@ -15,19 +15,16 @@ then the we can obtain the refine sets, ̂$`\hat{J}_{\hat{k}_1}^1,...,\hat{J}_{\
 In the third step removes, we remove these sets to obtains a more concise set of paths, a process referred to as model trimming(MTrim). We implement MTrim basing on the objective function and number of features used in each path. Let
 
 $`
-J^* = \text{argmin}_{J\in \{\hat{J}_{\hat{k}_1}^1,...,\hat{J}_{\hat{k}_M}^M\}},
-`$
-
-$`\ell_{\text{min}} = \ell_n(\hat{\beta}_{J^*})`$, and $`L_{\text{min}} = |J^*|`$ is the number of features used in the path with the smallest loss. We
+J^* = \text{argmin}_{J\in \{\hat{J}_{\hat{k}_1}^1,...,\hat{J}_{\hat{k}_M}^M\}}, \ell_{\text{min}} = \ell_n(\hat{\beta}_{J^*})`$, and $`L_{\text{min}} = |J^*|`$ is the number of features used in the path with the smallest loss. We
 consider ℓmin as baseline. If exist m such that
 
 $`
-\ell_n(\hat{\beta}_{\hat{J}_{\hat{k}_m}^m}) - \ell_{\text{min}} \leq c_2 * \max{1,L_{\text{min}}-|\hat{J}_{\hat{k}_m}^m|},\text{        (1)}
+\ell_n(\hat{\beta}_{\hat{J}_{\hat{k}_m}^m}) - \ell_{\text{min}} \leq c_2 * \max(1,L_{\text{min}}-|\hat{J}_{\hat{k}_m}^m|),\text{        (1)}
 `$
  
 where $`c_2`$ is a tuning parameter, then we remain ̂$`\hat{J}_{\hat{k}_m}^m`$ as one of the final models. The main concept
 of MTrim is that we tolerate a larger difference between ℓmin and losses of paths with less features than
-the best path, but a fix criterion for those paths with more features than J∗. In the end, the final set of
+the best path, but a fix criterion for those paths with more features than $`J^*`$. In the end, the final set of
 MPCGA+HDIC+MTrim is
 
 $`

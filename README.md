@@ -10,47 +10,30 @@ $`
 \hat{k}_l = \text{argmin}_{1\leq k \leq K} HDIC(\hat{J}_K^l), \text{for } l \text{ in } 1,...,M,
 `$
 
-then the we can obtain the refine sets, ̂ J1
-̂
-k1
-, ..., ̂ JM
-̂
-kM
-.
-We discover that some paths among { ̂J1
-̂
-k1
-, ..., ̂ JM
-̂
-kM
-} exhibit poor performance. In the third step removes,
-we remove these sets to obtains a more concise set of paths, a process referred to as model trimming(MTrim).
-We implement MTrim basing on the objective function and number of features used in each path. Let
-J∗ = arg min
-J∈{ ̂ J1
-̂
-k1
-,..., ̂ JM
-̂
-kM
-}
-ℓn( ̂ βJ ),
-ℓmin = ℓn( ̂ βJ∗ ), and Lmin = |J∗| is the number of features used in the path with the smallest loss. We
+then the we can obtain the refine sets, ̂$`\hat{J}_{\hat{k}_1}^1,...,\hat{J}_{\hat{k}_M}^M`$.
+
+In the third step removes, we remove these sets to obtains a more concise set of paths, a process referred to as model trimming(MTrim). We implement MTrim basing on the objective function and number of features used in each path. Let
+
+$`
+J^* = \text{argmin}_{J\in \{\hat{J}_{\hat{k}_1}^1,...,\hat{J}_{\hat{k}_M}^M\}},
+`$
+
+$`\ell_{\text{min}} = \ell_n(\hat{\beta}_{J^*})`$, and $`L_{\text{min}} = |J^*|`$ is the number of features used in the path with the smallest loss. We
 consider ℓmin as baseline. If exist m such that
-ℓn( ̂ β ̂ Jm
-̂
-km
-) − ℓmin ≤ c2 ∗ max(1, Lmin − | ̂ Jm
-̂
-km
-|), (2)
-where c2 is a tuning parameter, then we remain ̂ Jm
-̂
-km
-as one of the final models. The main concept
+
+$`
+\ell_n(\hat{\beta}_{\hat{J}_{\hat{k}_m}^m}) - \ell_{\text{min}} \leq c_2 * \max{1,L_{\text{min}}-|\hat{J}_{\hat{k}_m}^m|},\text{        (1)}
+`$
+ 
+where $`c_2`$ is a tuning parameter, then we remain ̂$`\hat{J}_{\hat{k}_m}^m`$ as one of the final models. The main concept
 of MTrim is that we tolerate a larger difference between ℓmin and losses of paths with less features than
 the best path, but a fix criterion for those paths with more features than J∗. In the end, the final set of
 MPCGA+HDIC+MTrim is
-{ ̂ Ĵ km ; 1 ≤ m ≤ M and m satisfies (2)}
+
+$`
+\{\hat{J}_{\hat{k}_m}; 1\leq m\leq M \text{ and }m \text{ satisfies (1)}\}
+`$
+
+
 
 ![image](https://github.com/CKIngGroup/MPCGA/assets/117146718/a37465b6-f750-4d0d-9ae3-6757a5699e0c)

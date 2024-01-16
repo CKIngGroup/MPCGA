@@ -40,3 +40,16 @@ $`
 ![image](https://github.com/CKIngGroup/MPCGA/assets/117146718/c590b9a7-5f55-41ca-be3a-f75629ef3902)
 
 
+# Usage
+
+MPCGA(X,y,Kn,max_set = 3,imp = 0.7,max_split =3)
+
+# Arguments
+
+- X : Input numpy/dataframe/list of n rows and p columns.
+- y : Response of length n.
+- Kn : The numbert of MPCGA iterations. Kn must be a positive integer between 1 and p.
+- max_set : Maximum number of candidate variable for each iteration.
+- imp : If a gradient corresponding to x_t is greater than imp*max_gradient then x_t would be consider into candidate set.
+- max_split : The maximum iteration for splitting path.
+

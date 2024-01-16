@@ -5,9 +5,11 @@ In order to improve the performance of CGA, we propose a three-step procedure. T
 In the second step, assume that Ω includes up to L features in each step. In this case, Algorithm 2 may
 generate at most $`M :=L^K`$  estimation models. Let $`\hat{J}_K^1,...,\hat{J}_K^M`$ represent the sets of selected features for all paths. We apply the HDIC criterion to eliminate redundant features and select the path with the smallest
 HDIC value, resulting in refined sets for all paths. Let
-$$`
-\hat{k}_l = \text{argmin}_{1\leq k \leq K} HDIC(\hat{J}_K^l), \text{for} l \text{in} 1,...,M,
-`$$
+
+$`
+\hat{k}_l = \text{argmin}_{1\leq k \leq K} HDIC(\hat{J}_K^l), \text{for } l \text{ in } 1,...,M,
+`$
+
 then the we can obtain the refine sets, ̂ J1
 ̂
 k1

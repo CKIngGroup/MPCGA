@@ -1,4 +1,6 @@
-# %%
+#################
+# import packages
+#################
 from scipy.optimize import minimize
 import pandas as pd
 import numpy as np
@@ -6,7 +8,9 @@ from scipy import optimize
 from sklearn import linear_model
 from sklearn.metrics import log_loss
 
-# %%
+##############################
+# Ohit for logistic regression
+##############################
 class Ohit_logistic:
     def __init__(self,X,Y,K):
         # -----------------------#
@@ -175,7 +179,7 @@ class Ohit_logistic:
         pred_proba = fit.predict_proba(X_subset_test.to_numpy())        
         return pd.DataFrame(pred),pd.DataFrame(pred_proba)
 
-# %%
+
 ####################
 ####### MPCGA ######
 ####################
@@ -184,7 +188,9 @@ class MPCGA:
         # -----------------------#
         # X is a n*p dataframe/numpy
         # Y is a n*1 dataframe/numpy
-
+        # max_set : maximum number of candidate variable for each iteration
+        # imp : if a gradient corresponding to x_t is greater than imp*max_gradient then x_t would be consider into candidate set
+        # max_split : the maximum iteration for split path
         if type(X).__module__ == 'numpy' or type(X) == list:
             X = pd.DataFrame(X)
             X.columns = ['V'+str(i+1) for i in range(X.shape[1])]
